@@ -67,8 +67,8 @@ ggplot(df) +
   theme_minimal() +
   theme(text = element_text(family = "Rajdhani", size = 16, colour = "black"),
         plot.title = element_text(size = 24, hjust = 0.5, face = "bold", margin = margin(0,0,10,0)),
-        plot.background = element_rect(fill = "#F5F5DC",colour = "#F5F5DC"),
-        panel.background = element_rect(fill="#F5F5DC",colour = "#F5F5DC"),
+        plot.background = element_rect(fill = "#D6D2C7",colour = "#D6D2C7"),
+        panel.background = element_rect(fill="#D6D2C7",colour = "#D6D2C7"),
         panel.grid = element_blank(),
         axis.text = element_blank(),
         axis.title = element_blank(),
