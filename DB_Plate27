@@ -54,6 +54,7 @@ occupation_breaks <- c("agriculture", "manufacturing", "domestic_service", "prof
 # Need to install font Rajdhani? (not available on Windows)
 # Added beige background and canvas
 # Legend shape to be changed to circle (guide command)
+# Need to add fine black line 
 ggplot(df) +
   geom_bar(aes(x = "", y = value, fill = occupation, group = order), stat = "identity") +
   geom_text(aes(x = "", y = 285, vjust = -18, label = "BLACK."), family = "Rajdhani", size = 5) +
@@ -67,8 +68,8 @@ ggplot(df) +
   theme_minimal() +
   theme(text = element_text(family = "Rajdhani", size = 16, colour = "black"),
         plot.title = element_text(size = 24, hjust = 0.5, face = "bold", margin = margin(0,0,10,0)),
-        plot.background = element_rect(fill = "#D6D2C7",colour = "#D6D2C7"),
-        panel.background = element_rect(fill="#D6D2C7",colour = "#D6D2C7"),
+        plot.background = element_rect(fill = "#DBD7CD",colour = "#DBD7CD"),
+        panel.background = element_rect(fill="#DBD7CD",colour = "#DBD7CD"),
         panel.grid = element_blank(),
         axis.text = element_blank(),
         axis.title = element_blank(),
