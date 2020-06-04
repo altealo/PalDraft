@@ -74,7 +74,7 @@ ggplot(df) +
   scale_fill_manual(values = occupation_fill, 
                     labels = occupation_labels,
                     breaks = occupation_breaks,
-                    guide = guide_legend(override.aes = list(shape = 19),title = NULL, ncol = 2)) +
+                    guide =FALSE) +
   theme_minimal() +
   theme(text = element_text(family = "Rajdhani", size = 16, colour = "black"),
         plot.title = element_text(size = 24, hjust = 0.5, face = "bold", margin = margin(0,0,10,0)),
