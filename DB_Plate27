@@ -31,7 +31,7 @@ df$order <- factor(df$order, levels = c("B agriculture", "B domestic_service", "
 occupation_fill <- c("agriculture" = "#A03038",
                      "domestic_service" = "#D5AD50",
                      " " = "white",
-                     "manufacturing" = "#2F3150",
+                     "manufacturing" = "#363C66",
                      "professions" = "#635450",
                      "trade" = "#D2CDC3")
                      #occupation_fill <- c("agriculture" = "#EE3B3B",
@@ -61,7 +61,7 @@ ggplot(df) +
   geom_text(aes(x = "", y = 200, vjust = 23, label = "WHITE"), family = "Rajdhani", size = 3) +
   annotate(geom = "point", x = 1.2, y = 1, colour = "#A03038", size = 7) + 
   annotate(geom = "text", x = 1.2, y = 1, label = "             AGRICULTURE, FISHERIES \n                           AND MINING.",hjust = "left",size = 1.3)+
-  annotate(geom = "point", x = 1.2, y = 15, colour = "#2F3150", size = 7) + 
+  annotate(geom = "point", x = 1.2, y = 15, colour = "#363C66", size = 7) + 
   annotate(geom = "text", x = 1.2, y = 15, label = "             MANUFACTURING       AND \n             MECHANICAL INDUSTRIES.",hjust = "left",size = 1.3)+
   annotate(geom = "point", x = 1.07, y = 207, colour = "#D5AD50", size = 7) + 
   annotate(geom = "text", x = 0.8, y = 224, label = "DOMESTIC   AND \n PERSONAL SERVICE.",hjust = "left",size = 1.3)+
