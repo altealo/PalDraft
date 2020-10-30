@@ -1,0 +1,40 @@
+# Recreating original image appeared in Army sanitary administration and its reform under the late Lord Herbert by Florence Nightingale, available at https://archive.org/details/armysanitaryadmi00nigh 
+library(tidyverse)
+library(ggplot2)
+library(colorfindr)
+library(showtext)
+
+# Example font family (won't be final font)
+# Code on font adapted from http://gradientdescending.com/adding-custom-fonts-to-ggplot-in-r/
+font_add_google(name = "Amatic SC", family = "amatic-sc") 
+# Turn on showtext to render
+showtext_auto()
+
+# Extract the colour palette
+# Colorfindr code adapted from https://twitter.com/BenguKalo/status/1309138557051822081/photo/1
+set.seed(1822)
+herbert<-get_colors("https://upload.wikimedia.org/wikipedia/commons/d/d2/Relative_Annual_Morbidity_from_zymotic_diseases%2C_chest_and_tubercular_diseases_%28Army_sanitary_administration%29.png")%>%
+make_palette(n=20)
+
+# Toy data set (unfortunately original is not available)
+col <- c(rep("green" , 3) , rep("orange" , 3) , rep("blue" , 3) )
+condition <- rep(c("green" , "orange" , "blue") , 3)
+value <- c(4,4,2,3,7,4,1,4,2)
+data <- data.frame(col,condition,value)
+
+# Stacked barplot
+p<-ggplot(data, aes(fill=condition, y=value, x=col)) + 
+geom_bar(position="stack", stat="identity",color='black')+
+theme(panel.background = element_rect(fill = "#F4F1F0", colour ="#F4F1F0"),panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank())+
+scale_fill_manual(values=c("#DCE0E2","#EAD4B8","#C5CEB7"))+
+  labs(title = "DIAGRAM",subtitle = "representing the relative Annual Mortality...") +
+theme(text = element_text(family = "amatic-sc", size = 24), 
+    plot.title = element_text(size = 30),
+    plot.subtitle = element_text(size=20,hjust = 0, margin = margin(t = 40),face="italic"),
+    plot.caption = element_text(size = 28))+
+theme_void()
+
+p+coord_flip()+theme(legend.position = "none")
+
+
